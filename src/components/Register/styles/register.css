@@ -1,0 +1,56 @@
+.register {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid blue;
+    border-radius: 16px;
+    padding: 40px 100px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 5px 2px 2px blue;
+    margin-top: -20px;
+}
+
+.register > h3 {
+    margin-top: -11px;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+label {
+    font-size: 20px;
+    display: block;
+}
+
+input {
+    font-size: 20px;
+    border-radius: 16px;
+}
+
+form a {
+    text-decoration: none;
+    color: blue;
+}
+
+form a:hover {
+    color: red;
+}
+
+form button{
+    border: none;
+    padding: 12px;
+    border-radius: 16px;
+    background-color: blue;
+    color: white;
+    font-size: 18px;
+    font-family: 'DM Serif Display', serif;
+}
+
+form button:hover {
+    background-color: white;
+    cursor: pointer;
+    color: blue;
+    border: 1px solid blue;
+    transition: 300ms;
+}

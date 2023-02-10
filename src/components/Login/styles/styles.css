@@ -1,0 +1,64 @@
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid blue;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 5px 2px 2px blue;
+}
+
+.username {
+    margin-bottom: 10px;
+}
+
+.password {
+    margin-bottom: 10px;
+}
+
+form label {
+    display: block;
+    margin-right: 2px;
+    font-size: 20px;
+}
+
+form input {
+    border-radius: 14px;
+    padding: 5px;
+}
+
+.button {
+    color: white;
+    background-color: blue;
+    border: none;
+    border-radius: 14px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'DM Serif Display', serif;
+}
+
+.login>h3 {
+    margin-top: -11px;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.login a {
+    color: blue;
+    text-decoration: none;
+}
+
+.login a:hover {
+    color: red;
+}
+
+.login .button:hover {
+    background-color: white;
+    cursor: pointer;
+    color: blue;
+    border: 1px solid blue;
+    transition: 300ms;
+}
