@@ -1,0 +1,23 @@
+footer {
+    background-color: rgb(66, 66, 243);;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+footer p {
+    margin: 7px;
+    text-align: center;
+    color: white;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: blue;
+}
