@@ -1,0 +1,25 @@
+main h1 {
+    margin-top: 130px;
+    margin-left: 600px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 60px;
+    color: rgb(0, 90, 185);
+}
+
+main h3 {
+    margin-top: 10px;
+    margin-left: 600px;
+    text-align: center;
+    font-size: 60px;
+    color: rgb(0, 90, 185);
+}
+
+.main-img {
+    width: 200px;
+    position: absolute;
+    left: 70%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+}
