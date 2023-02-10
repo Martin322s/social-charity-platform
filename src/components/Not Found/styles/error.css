@@ -1,0 +1,22 @@
+.error-heading {
+    color: black;
+}
+
+.error-heading-three {
+    text-align: center;
+    margin-left: 600px;
+    font-size: 40px;
+    margin-top: 0px;
+}
+
+.error-container img {
+    width: 200px;
+    padding-right: 30px;
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-right: 400px;
+}

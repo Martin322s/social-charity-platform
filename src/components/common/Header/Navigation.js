@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./styles/navigation.css";
 import logo from "./images/logo.png";
 
@@ -7,46 +8,46 @@ const Navigation = () => {
             <img className="logo" src={logo} alt="logo" />
             <ul className="nav-bar">
                 <li className="nav-link">
-                    <a href="/">
+                    <Link to="/">
                         <i className="fas fa-home" />
                         Home
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-link">
-                    <a href="/">
+                    <Link to="/publications">
                         <i className="fas fa-address-card" />
                         Publications
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-link">
-                    <a href="/">
+                    <Link to="/create">
                         <i className="fas fa-plus-square" />
                         Create
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-link">
-                    <a href="/">
+                    <Link to="/profile">
                         <i className="fas fa-user-alt" />
                         Profile
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-link">
-                    <a href="/">
+                    <Link to="/login">
                         <i className="fas fa-sign-out-alt" />
                         Sign In
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-link">
-                    <a href="/">
+                    <Link to="/register">
                         <i className="fas fa-user-plus" />
                         Sign Up
-                    </a>
+                    </Link>
                 </li>
                 <li className="nav-link">
-                    <a href="/">
+                    <Link to="/logout">
                         <i className="fas fa-power-off" />
                         Logout
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </header>

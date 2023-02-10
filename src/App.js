@@ -1,9 +1,11 @@
+import { Routes, Route } from "react-router-dom";
 import Footer from "./components/common/Footer/Footer";
 import Navigation from "./components/common/Header/Navigation";
 import Create from "./components/Create/Create";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
+import Error from "./components/Not Found/Error";
 import Profile from "./components/Profile/Profile";
 import Register from "./components/Register/Register";
 
@@ -11,12 +13,15 @@ function App() {
     return (
         <>
             <Navigation />
-                <Home />
-                <Create />
-                <Dashboard />
-                <Login />
-                <Profile />
-                <Register />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/create" element={<Create />} />
+                <Route path="/publications" element={<Dashboard />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="*" element={<Error />} />
+            </Routes>
             <Footer />
         </>
     );
