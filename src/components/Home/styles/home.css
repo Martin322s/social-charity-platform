@@ -7,7 +7,7 @@ main h1 {
     color: rgb(0, 90, 185);
 }
 
-main h3 {
+.main-heading {
     margin-top: 10px;
     margin-left: 600px;
     text-align: center;

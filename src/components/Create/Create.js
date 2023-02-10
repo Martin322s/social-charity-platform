@@ -4,7 +4,7 @@ const Create = () => {
     return (
         <main>
             <form className="register">
-                <h3>
+                <h3 className="create-heading">
                     <i className="fas fa-plus-square" />
                     Create Publication
                 </h3>
