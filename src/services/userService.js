@@ -19,3 +19,14 @@ export const logoutUser = (token) => {
         }
     });
 }
+
+export const loginUser = (userData) => {
+    return fetch(`${baseUrl}/login`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+        .then(res => res.json());
+}
