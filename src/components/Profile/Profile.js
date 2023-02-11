@@ -1,9 +1,19 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/userContext";
+import { getMyPublications } from "../../services/publicationService";
+import Publication from "./Publication";
 import "./styles/profile.css";
 
 const Profile = () => {
     const { user } = useContext(AuthContext);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        getMyPublications(user.accessToken, user._id)
+            .then(myData => {
+                setData(myData);
+            });
+    }, []);
 
     return (
         <main>
@@ -23,46 +33,12 @@ const Profile = () => {
                     <h2>Created publications:</h2>
                 </header>
                 <section className="publications">
-                    <article className="publication">
-                        <h1>Title 1</h1>
-                        <span className="content-cat ">Category</span>
-                        <p className="content">Content</p>
-                        <div className="activities">
-                            <button className="like-btn">Like</button>
-                            <button className="edit-btn">Edit</button>
-                            <button className="delete-btn">Delete</button>
-                        </div>
-                    </article>
-                    <article className="publication">
-                        <h1>Title 2</h1>
-                        <span className="content-cat ">Category</span>
-                        <p className="content">Content</p>
-                        <div className="activities">
-                            <button className="like-btn">Like</button>
-                            <button className="edit-btn">Edit</button>
-                            <button className="delete-btn">Delete</button>
-                        </div>
-                    </article>
-                    <article className="publication">
-                        <h1>Title 3</h1>
-                        <span className="content-cat ">Category</span>
-                        <p className="content">Content</p>
-                        <div className="activities">
-                            <button className="like-btn">Like</button>
-                            <button className="edit-btn">Edit</button>
-                            <button className="delete-btn">Delete</button>
-                        </div>
-                    </article>
-                    <article className="publication">
-                        <h1>Title 4</h1>
-                        <span className="content-cat ">Category</span>
-                        <p className="content">Content</p>
-                        <div className="activities">
-                            <button className="like-btn">Like</button>
-                            <button className="edit-btn">Edit</button>
-                            <button className="delete-btn">Delete</button>
-                        </div>
-                    </article>
+                    {data.length > 0 ?
+                        data.map(publication => 
+                            <Publication key={publication._id} publicData={publication} />)
+                        : <h3>There are no publications yet.</h3>
+                    }
+
                 </section>
             </section>
         </main>
