@@ -12,4 +12,4 @@ export const createPublication = (userData, token) => {
         .then(res => res.json());
 }
 
-export const getAll = () => fetch(`${baseUrl}/`)
+export const getAll = () => fetch(`${baseUrl}/all`).then(res => res.json());

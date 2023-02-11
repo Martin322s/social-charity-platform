@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/userContext";
 import { createPublication } from "../../services/publicationService";
 import "./styles/create.css";
 
 const Create = () => {
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
     const [data, setData] = useState({
         title: "",
         category: "",
@@ -25,8 +27,8 @@ const Create = () => {
             alert("All fields are required!");
         } else {
             createPublication({ ...data, _ownerId: id }, token)
-                .then(data => {
-                    console.log(data);
+                .then(() => {
+                    navigate('/publications');
                 });
         }
     }
