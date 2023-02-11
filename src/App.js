@@ -8,21 +8,24 @@ import Login from "./components/Login/Login";
 import Error from "./components/Not Found/Error";
 import Profile from "./components/Profile/Profile";
 import Register from "./components/Register/Register";
+import { AuthProvider } from "./contexts/userContext";
 
 function App() {
     return (
         <>
-            <Navigation />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/create" element={<Create />} />
-                <Route path="/publications" element={<Dashboard />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="*" element={<Error />} />
-            </Routes>
-            <Footer />
+            <AuthProvider>
+                <Navigation />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/create" element={<Create />} />
+                    <Route path="/publications" element={<Dashboard />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="*" element={<Error />} />
+                </Routes>
+                <Footer />
+            </AuthProvider>
         </>
     );
 }
