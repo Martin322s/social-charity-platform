@@ -10,3 +10,12 @@ export const registerUser = (userData) => {
     })
         .then(res => res.json());
 }
+
+export const logoutUser = (token) => {
+    return fetch(`${baseUrl}/logout`, {
+        method: "GET",
+        headers: {
+            'X-Authorization': token
+        }
+    });
+}
