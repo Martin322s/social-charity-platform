@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/userContext";
 import "./styles/profile.css";
 
 const Profile = () => {
+    const { user } = useContext(AuthContext);
+
     return (
         <main>
             <section className="profile">
@@ -9,11 +13,11 @@ const Profile = () => {
                     <ul className="data">
                         <li>
                             <i className="fas fa-user-circle" />
-                            User: Full name
+                            User: {`${user.firstName} ${user.lastName}`}
                         </li>
                         <li>
                             <i className="fas fa-envelope" />
-                            Email: profile@abv.bg
+                            Email: {`${user.email}`}
                         </li>
                     </ul>
                     <h2>Created publications:</h2>
