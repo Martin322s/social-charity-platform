@@ -25,17 +25,15 @@ const Register = () => {
     const SubmitHandler = (ev, userData) => {
         ev.preventDefault();
 
-        if ((userData.password === userData.rePass) && (userData.password !== '' && userData.rePass !== '')) {
-            if (Object.values(userData).some(x => x === "")) {
-                alert("All fields are required!");
-            } else {
-                registerUser(userData)
-                    .then(user => {
-                        userLogin(user);
-                        navigate("/");
-                    })
-                    .catch(error => alert(error.message));
-            }
+        if (Object.values(userData).some(x => x === "")) {
+            alert("All fields are required!");
+        } else if ((userData.password === userData.rePass) && (userData.password !== '' && userData.rePass !== '')) {
+            registerUser(userData)
+                .then(user => {
+                    userLogin(user);
+                    navigate("/");
+                })
+                .catch(error => alert(error.message));
         }
     }
 
