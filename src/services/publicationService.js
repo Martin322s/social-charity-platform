@@ -23,3 +23,4 @@ export const getMyPublications = (token, ownerId) => {
 }
 
 export const getAll = () => fetch(`${baseUrl}/all`).then(res => res.json());
+export const getOne = (id) => fetch(`${baseUrl}/${id}`).then(res => res.json());
