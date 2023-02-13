@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Publication = ({ publicData }) => {
     return (
         <article className="publication">
@@ -5,9 +7,7 @@ const Publication = ({ publicData }) => {
             <span className="content-cat ">{publicData.category}</span>
             <p className="content">{publicData.content}</p>
             <div className="activities">
-                <button className="like-btn">Like</button>
-                <button className="edit-btn">Edit</button>
-                <button className="delete-btn">Delete</button>
+                <Link className="btn details-btn" to={`/details/${publicData._id}`}>Details</Link>
             </div>
         </article>
     );
