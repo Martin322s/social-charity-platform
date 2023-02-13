@@ -4,7 +4,7 @@ const Details = () => {
     return (
         <main>
             <section className="details">
-                <h1 className="details__heading">Title</h1>
+                <h3 id="details__heading">Title</h3>
                 <h3 className="details__category">Category</h3>
                 <p className="details__content">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate et

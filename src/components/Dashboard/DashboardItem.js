@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./styles/dashboard.css";
 
 const DashboardItem = ({ publicationData }) => {
@@ -7,7 +8,7 @@ const DashboardItem = ({ publicationData }) => {
             <span className="content-cat ">{publicationData.category}</span>
             <p className="content">{publicationData.content}</p>
             <div className="activities">
-                <button className="btn like-btn">Details</button>
+                <Link className="btn like-btn" to={`/details/${publicationData._id}`}>Details</Link>
             </div>
         </article>
     );

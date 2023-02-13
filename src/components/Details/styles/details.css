@@ -12,8 +12,9 @@
     margin-top: -20px;
 }
 
-.details .details__heading {
+.details #details__heading {
     margin-top: 0px;
+    font-size: 40px;
 }
 
 .details .details__content {
