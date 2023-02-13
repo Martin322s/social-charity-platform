@@ -1,11 +1,9 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../contexts/userContext";
 import { registerUser } from "../../services/userService";
 import "./styles/register.css";
 
 const Register = () => {
-    const { userLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const [data, setData] = useState({
         firstName: "",
@@ -29,8 +27,8 @@ const Register = () => {
             alert("All fields are required!");
         } else if ((userData.password === userData.rePass) && (userData.password !== '' && userData.rePass !== '')) {
             registerUser(userData)
-                .then(user => {
-                    userLogin(user);
+                .then(() => {
+                    alert("You have successfully registered! Please log in to your account.");
                     navigate("/");
                 })
                 .catch(error => alert(error.message));

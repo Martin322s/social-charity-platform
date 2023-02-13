@@ -23,7 +23,7 @@ const Details = () => {
                     });
                 setData(data);
             });
-    }, []);
+    }, [publicationId]);
 
     const clickHandler = (id, sum, token, userId) => {
         donate(id, sum, token, userId)
