@@ -1,13 +1,17 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../contexts/userContext";
-import { getOne } from "../../services/publicationService";
+import { donate, getOne } from "../../services/publicationService";
 import "./styles/details.css";
 
 const Details = () => {
     const { user } = useContext(AuthContext);
     const { publicationId } = useParams();
     const [data, setData] = useState({});
+    const navigate = useNavigate();
+    const sum = { sum: 100 };
+    const token = user.accessToken;
+    const userId = user._id;
 
     useEffect(() => {
         getOne(publicationId)
@@ -15,6 +19,14 @@ const Details = () => {
                 setData(data);
             });
     }, []);
+
+    const clickHandler = (id, sum, token, userId) => {
+        donate(id, sum, token, userId)
+            .then(result => {
+                setData(result);
+                navigate(`/details/${result._id}`);
+            });
+    }
 
     return (
         <main>
@@ -24,12 +36,21 @@ const Details = () => {
                 <p className="details__content">
                     {data.content}
                 </p>
+                <p>Donations: {data.donations}$</p>
+                {data.donations > 0 && data.donators.includes(user._id) ?
+                    <p>Thank you! You have donated 100$</p>
+                    : <div className="actions">
+                        <button className="btn" onClick={() => clickHandler(publicationId, sum, token, userId)}>
+                            Donate 100$
+                        </button>
+                    </div>
+                }
                 {user._id === data._ownerId ?
                     <div className="actions">
-                        <button className="btn">Edit</button>
-                        <button className="btn">Delete</button>
+                        <Link className="btn">Edit</Link>
+                        <Link className="btn">Delete</Link>
                     </div>
-                    :   <div className="actions"><button className="btn">Donate</button></div>
+                    : null
                 }
             </section>
         </main>

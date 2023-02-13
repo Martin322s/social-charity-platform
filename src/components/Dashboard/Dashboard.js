@@ -1,10 +1,17 @@
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/userContext";
+import { useEffect, useState } from "react";
+import { getAll } from "../../services/publicationService";
 import DashboardItem from "./DashboardItem";
 import "./styles/dashboard.css";
 
 const Dashboard = () => {
-    const { data } = useContext(AuthContext);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        getAll()
+            .then(data => {
+                setData(data);
+            });
+    }, []);
 
     return (
         <main>

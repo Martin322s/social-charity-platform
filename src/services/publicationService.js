@@ -24,3 +24,15 @@ export const getMyPublications = (token, ownerId) => {
 
 export const getAll = () => fetch(`${baseUrl}/all`).then(res => res.json());
 export const getOne = (id) => fetch(`${baseUrl}/${id}`).then(res => res.json());
+
+export const donate = (publicId, sum, token, userId) => {
+    return fetch(`${baseUrl}/donations/${publicId}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': token
+        },
+        body: JSON.stringify({ sum, userId })
+    })
+        .then(res => res.json());
+}
