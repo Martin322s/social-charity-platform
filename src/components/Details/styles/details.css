@@ -1,0 +1,31 @@
+.details {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid blue;
+    border-radius: 16px;
+    padding: 50px 200px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 5px 2px 2px blue;
+    margin-top: -20px;
+}
+
+.details .details__heading {
+    margin-top: 0px;
+}
+
+.details .details__content {
+    margin-bottom: 40px;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 16px;
+    color: white;
+    background-color: blue;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 5px;
+}
