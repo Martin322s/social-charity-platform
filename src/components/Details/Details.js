@@ -1,13 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../contexts/userContext";
-import { donate, getOne } from "../../services/publicationService";
+import { donate, getAuthor, getOne } from "../../services/publicationService";
 import "./styles/details.css";
 
 const Details = () => {
     const { user } = useContext(AuthContext);
     const { publicationId } = useParams();
     const [data, setData] = useState({});
+    const [author, setAuthor] = useState({});
     const navigate = useNavigate();
     const sum = { sum: 100 };
     const token = user.accessToken;
@@ -16,6 +17,10 @@ const Details = () => {
     useEffect(() => {
         getOne(publicationId)
             .then(data => {
+                getAuthor(data._ownerId)
+                    .then(result => {
+                        setAuthor(result);
+                    });
                 setData(data);
             });
     }, []);
@@ -37,13 +42,16 @@ const Details = () => {
                     {data.content}
                 </p>
                 <p>Donations: {data.donations}$</p>
+                <p>Author: {author?.email}</p>
                 {data.donations > 0 && data.donators.includes(user._id) ?
                     <p>Thank you! You have donated 100$</p>
-                    : <div className="actions">
-                        <button className="btn" onClick={() => clickHandler(publicationId, sum, token, userId)}>
-                            Donate 100$
-                        </button>
-                    </div>
+                    : user._id !== data._ownerId ?
+                        <div className="actions">
+                            <button className="btn" onClick={() => clickHandler(publicationId, sum, token, userId)}>
+                                Donate 100$
+                            </button>
+                        </div>
+                        : null
                 }
                 {user._id === data._ownerId ?
                     <div className="actions">

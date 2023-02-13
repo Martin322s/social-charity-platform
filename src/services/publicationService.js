@@ -36,3 +36,5 @@ export const donate = (publicId, sum, token, userId) => {
     })
         .then(res => res.json());
 }
+
+export const getAuthor = (userId) => fetch(`${baseUrl}/author/${userId}`).then(res => res.json());
