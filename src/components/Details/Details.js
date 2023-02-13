@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../../contexts/userContext";
 import { getOne } from "../../services/publicationService";
 import "./styles/details.css";
 
 const Details = () => {
+    const { user } = useContext(AuthContext);
     const { publicationId } = useParams();
     const [data, setData] = useState({});
 
@@ -22,11 +24,13 @@ const Details = () => {
                 <p className="details__content">
                     {data.content}
                 </p>
-                <div className="actions">
-                    <button className="btn">Donate</button>
-                    <button className="btn">Edit</button>
-                    <button className="btn">Delete</button>
-                </div>
+                {user._id === data._ownerId ?
+                    <div className="actions">
+                        <button className="btn">Edit</button>
+                        <button className="btn">Delete</button>
+                    </div>
+                    :   <div className="actions"><button className="btn">Donate</button></div>
+                }
             </section>
         </main>
     )
