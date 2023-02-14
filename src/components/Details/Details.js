@@ -55,8 +55,8 @@ const Details = () => {
                 }
                 {user._id === data._ownerId ?
                     <div className="actions">
-                        <Link className="btn">Edit</Link>
-                        <Link className="btn">Delete</Link>
+                        <Link className="btn" to={`/details/${publicationId}/edit`}>Edit</Link>
+                        <Link className="btn" to={`/details/${publicationId}/delete`}>Delete</Link>
                     </div>
                     : null
                 }

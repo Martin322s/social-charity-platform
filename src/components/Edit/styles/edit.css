@@ -1,0 +1,63 @@
+.edit-page {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid blue;
+    border-radius: 16px;
+    padding: 60px 100px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 5px 2px 2px blue;
+}
+
+.edit-heading {
+    margin-top: -11px;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+label {
+    font-size: 20px;
+    display: block;
+}
+
+input {
+    font-size: 20px;
+    border-radius: 16px;
+}
+
+form a {
+    text-decoration: none;
+    color: blue;
+}
+
+form button{
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border: none;
+    padding: 12px;
+    border-radius: 16px;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'DM Serif Display', serif;
+    border: 2px solid blue;
+}
+
+form button:hover {
+    background-color: white;
+    cursor: pointer;
+    color: blue;
+    transition: 300ms;
+    border: 2px solid blue;
+    font-weight: 500;
+}
+
+textarea {
+    border-radius: 16px;
+    margin-bottom: 10px;
+}
