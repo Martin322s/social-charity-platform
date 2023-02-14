@@ -50,3 +50,14 @@ export const editPublication = (publicationId, token, data) => {
     })
         .then(res => res.json());
 }
+
+export const deletePublication = (publicId, token) => {
+    return fetch(`${baseUrl}/delete/${publicId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': token
+        }
+    })
+        .then(res => res.json());
+}
