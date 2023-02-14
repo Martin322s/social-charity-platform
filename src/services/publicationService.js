@@ -38,3 +38,15 @@ export const donate = (publicId, sum, token, userId) => {
 }
 
 export const getAuthor = (userId) => fetch(`${baseUrl}/author/${userId}`).then(res => res.json());
+
+export const editPublication = (publicationId, token, data) => {
+    return fetch(`${baseUrl}/edit/${publicationId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': token
+        },
+        body: JSON.stringify(data)
+    })
+        .then(res => res.json());
+}
