@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/userContext";
 import { createPublication } from "../../services/publicationService";
 import "./styles/create.css";

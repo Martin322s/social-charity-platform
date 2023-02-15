@@ -13,6 +13,7 @@ const Profile = () => {
             .then(myData => {
                 setData(myData);
             });
+    // eslint-disable-next-line
     }, []);
 
     return (
