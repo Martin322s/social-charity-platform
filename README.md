@@ -2,13 +2,13 @@
 Web application (SPA) using ReactJS for the client side, NodeJS (Express) for the back end and MongoDB with mongoose for data management. The application dynamically chnages content, based on user iteraction and supports user profiles and CRUD operations using a REST service.
 
 ## Overview
-Single Page App for sharing charity causes. The application allows visitors to browse through different publications. Users may register with user information, email and password, which allows them to create their own publications. Creators can also edi and delete their own sharings at any time.
+Single Page App for sharing charity causes. The application allows visitors to browse through different publications. Users may register with user information, email and password, which allows them to create their own publications. Creators can also edit and delete their own sharings at any time.
 
 ## Technical Details
 The application have following resources:
 - Project scaffold: A package.json file, containing list of common dependencies. 
 - Components for every endpoint of the application.
-To start the application, execute the command “npm install” via the command-line terminal.
+To start the application, execute the command “npm install” and “npm start” via the command-line terminal.
 - Local REST Service: A special server, which contains sample data and support user registration and CRUD operations via REST requests is included with the project.
 
 ## Application Endpoints
@@ -31,7 +31,6 @@ Register functionalty will send POST request to the correct endpoint with names,
 
 - Profile Page – The page show the user names, email and all created publications made by the current user:
 
-- Edit publication page – The edit page is available to logged in users and it allows author to edit their own publication. Clicking the Edit link will display the edit page. It contains a form with input fields for all relevant properties. All fields must be filled before sending the information.
+- Edit publication page – The edit page is available to logged in users and it allows author to edit their own publication. Clicking the Edit link will display the edit page. It contains a form with input fields for all relevant properties. All fields must be filled before sending the information.The service will return the modified record. Upon success the user will be redirected to the publications page.
 
-The service will return the modified record. Upon success the user will be redirected to the publications page.
 - Delete Publication – The delete action is available to the logged in users, for publication that they created. When the author clicks on the Delete button on any of his publications, the publication will be deleted from the system. The service will return an object, containing the deletion time. Upon success, the user will be redirected the user to publications page.
