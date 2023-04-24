@@ -1,6 +1,7 @@
+import { memo } from "react";
 import "./styles/home.css";
 
-const Home = () => {
+const Home = memo(() => {
     return (
         <main>
             <h1>Welcome to WINK -</h1>
@@ -8,6 +9,6 @@ const Home = () => {
             <img className="main-img" src="./images/favicon.png" alt="mainImg" />
         </main>
     );
-}
+});
 
 export default Home;

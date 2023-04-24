@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/userContext";
 import { logoutUser } from "../../services/userService";
 
-const Logout = () => {
+const Logout = memo(() => {
     const { user, userLogout } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -12,6 +12,6 @@ const Logout = () => {
             userLogout();
             navigate("/");
         });
-}
+});
 
 export default Logout;
