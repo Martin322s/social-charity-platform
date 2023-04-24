@@ -5,12 +5,6 @@ import { AuthProvider } from "./contexts/userContext";
 import PrivateRoute from "./guards/PrivateRoute";
 import RouteGuard from "./guards/RouteGuard";
 
-const Delete = React.lazy(() => import("./components/Delete/Delete"));
-const Details = React.lazy(() => import("./components/Details/Details"));
-const Edit = React.lazy(() => import("./components/Edit/Edit"));
-const Logout = React.lazy(() => import("./components/Logout/Logout"));
-const Error = React.lazy(() => import("./components/Not Found/Error"));
-
 import Footer from "./components/common/Footer/Footer";
 import Navigation from "./components/common/Header/Navigation";
 import Create from "./components/Create/Create";
@@ -19,6 +13,12 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Profile from "./components/Profile/Profile";
 import Register from "./components/Register/Register";
+
+const Delete = React.lazy(() => import("./components/Delete/Delete"));
+const Details = React.lazy(() => import("./components/Details/Details"));
+const Edit = React.lazy(() => import("./components/Edit/Edit"));
+const Logout = React.lazy(() => import("./components/Logout/Logout"));
+const Error = React.lazy(() => import("./components/Not Found/Error"));
 
 function App() {
     return (
