@@ -15,7 +15,7 @@ const Delete = React.lazy(() => import("./components/Delete/Delete"));
 const Details = React.lazy(() => import("./components/Details/Details"));
 const Edit = React.lazy(() => import("./components/Edit/Edit"));
 const Logout = React.lazy(() => import("./components/Logout/Logout"));
-import Error from "./components/Not Found/Error";
+const Error = React.lazy(() => import("./components/Not Found/Error"));
 import React from "react";
 
 function App() {
