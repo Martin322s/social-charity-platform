@@ -13,8 +13,7 @@ const Profile = () => {
             .then(myData => {
                 setData(myData);
             });
-    // eslint-disable-next-line
-    }, []);
+    }, [user._id, user.accessToken]);
 
     return (
         <main>

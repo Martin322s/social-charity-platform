@@ -1,12 +1,6 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Footer from "./components/common/Footer/Footer";
-import Navigation from "./components/common/Header/Navigation";
-import Create from "./components/Create/Create";
-import Dashboard from "./components/Dashboard/Dashboard";
-import Home from "./components/Home/Home";
-import Login from "./components/Login/Login";
-import Profile from "./components/Profile/Profile";
-import Register from "./components/Register/Register";
+
 import { AuthProvider } from "./contexts/userContext";
 import PrivateRoute from "./guards/PrivateRoute";
 import RouteGuard from "./guards/RouteGuard";
@@ -16,7 +10,15 @@ const Details = React.lazy(() => import("./components/Details/Details"));
 const Edit = React.lazy(() => import("./components/Edit/Edit"));
 const Logout = React.lazy(() => import("./components/Logout/Logout"));
 const Error = React.lazy(() => import("./components/Not Found/Error"));
-import React from "react";
+
+import Footer from "./components/common/Footer/Footer";
+import Navigation from "./components/common/Header/Navigation";
+import Create from "./components/Create/Create";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import Profile from "./components/Profile/Profile";
+import Register from "./components/Register/Register";
 
 function App() {
     return (
