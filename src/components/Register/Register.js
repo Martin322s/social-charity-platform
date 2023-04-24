@@ -1,23 +1,30 @@
-import { useState } from "react";
+import { useReducer } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../services/userService";
 import "./styles/register.css";
 
+const initialState = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    rePass: ""
+};
+
+function reducer(state, action) {
+    switch(action.type) {
+        case "USER_DATA": {
+            return { state: state }
+        }
+        default: console.log("Invalid action type!");
+    }
+}
 const Register = () => {
     const navigate = useNavigate();
-    const [data, setData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        rePass: ""
-    });
+    const [data, dispatch] = useReducer(reducer, initialState);
 
     const changeHandler = (ev) => {
-        setData(state => ({
-            ...state,
-            [ev.target.name]: ev.target.value
-        }));
+        dispatch({ type: "USER_DATA", [ev.target.name]: ev.target.value });
     }
 
     const SubmitHandler = (ev, userData) => {
@@ -25,7 +32,8 @@ const Register = () => {
 
         if (Object.values(userData).some(x => x === "")) {
             alert("All fields are required!");
-        } else if ((userData.password === userData.rePass) && (userData.password !== '' && userData.rePass !== '')) {
+        } else if ((userData.password === userData.rePass) &&
+            (userData.password !== '' && userData.rePass !== '')) {
             registerUser(userData)
                 .then(() => {
                     alert("You have successfully registered! Please log in to your account.");
