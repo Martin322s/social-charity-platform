@@ -12,7 +12,7 @@ import PrivateRoute from "./guards/PrivateRoute";
 import RouteGuard from "./guards/RouteGuard";
 
 const Delete = React.lazy(() => import("./components/Delete/Delete"));
-import Details from "./components/Details/Details";
+const Details = React.lazy(() => import("./components/Details/Details"));
 import Edit from "./components/Edit/Edit";
 import Logout from "./components/Logout/Logout";
 import Error from "./components/Not Found/Error";
