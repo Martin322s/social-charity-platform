@@ -13,7 +13,7 @@ import RouteGuard from "./guards/RouteGuard";
 
 const Delete = React.lazy(() => import("./components/Delete/Delete"));
 const Details = React.lazy(() => import("./components/Details/Details"));
-import Edit from "./components/Edit/Edit";
+const Edit = React.lazy(() => import("./components/Edit/Edit"));
 import Logout from "./components/Logout/Logout";
 import Error from "./components/Not Found/Error";
 import React from "react";
